@@ -1,5 +1,5 @@
 # alpine-node-yarn-install-aws-cli
-Lightweight yarn docker image on alpine with aws-cli & npm installation on build
+Lightweight yarn docker image on alpine with mecab & npm installation on build
 
 ## NodeJS
 version: 12.18.0
