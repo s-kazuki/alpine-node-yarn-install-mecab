@@ -1,4 +1,4 @@
-# alpine-node-yarn-install-aws-cli
+# alpine-node-yarn-install-mecab
 Lightweight yarn docker image on alpine with mecab & npm installation on build
 
 ## NodeJS
