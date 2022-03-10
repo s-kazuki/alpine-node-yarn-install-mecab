@@ -2,7 +2,7 @@
 Lightweight yarn docker image on alpine with mecab & npm installation on build
 
 ## NodeJS
-version: 12.22.8
+version: 14.18.2
 
 ## NPM
 version: 8.3.0
