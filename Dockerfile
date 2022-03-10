@@ -1,4 +1,4 @@
-FROM skazuki/alpine-node
+FROM skazuki/alpine-node:12
 
 LABEL maintainer="S-Kazuki<contact@revoneo.com>"
 
@@ -42,3 +42,8 @@ RUN apk add --update --no-cache --virtual .mecab-build-deps ${MECAB_BUILD_DEPS} 
 # Clean up
 && apk del .mecab-build-deps \
 && rm -rf ${APP_ROOT}/mecab-*
+
+ONBUILD COPY package.json ${APP_ROOT}/
+ONBUILD COPY yarn.lock ${APP_ROOT}/
+
+ONBUILD RUN yarn install --frozen-lockfile --ignore-optional
