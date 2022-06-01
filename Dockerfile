@@ -37,9 +37,9 @@ RUN apk add --update --no-cache --virtual .mecab-build-deps ${MECAB_BUILD_DEPS} 
 && mkdir -p ${APP_ROOT}/mecab-ipadic-neologd/build \
 && mv ${APP_ROOT}/mecab-ipadic-${IPADIC_VERSION}.tar.gz ${APP_ROOT}/mecab-ipadic-neologd/build/mecab-ipadic-${IPADIC_VERSION}.tar.gz \
 && mv ${APP_ROOT}/make-mecab-ipadic-neologd.sh ${APP_ROOT}/mecab-ipadic-neologd/libexec/make-mecab-ipadic-neologd.sh \
+&& chmod +x ${APP_ROOT}/mecab-ipadic-neologd/libexec/make-mecab-ipadic-neologd.sh \
 && mv ${APP_ROOT}/neologd-common-noun-ortho-variant-dict-seed.20170228.csv.xz ${APP_ROOT}/mecab-ipadic-neologd/seed/neologd-common-noun-ortho-variant-dict-seed.20170228.csv.xz \
 && cd ${APP_ROOT}/mecab-ipadic-neologd && ./bin/install-mecab-ipadic-neologd -n -a -y \
-&& mecab -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd \
 
 # Clean up
 && apk del .mecab-build-deps \
